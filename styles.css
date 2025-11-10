@@ -1,12 +1,12 @@
 
-/* Reset */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body */
+
 body {
   font-family: 'Poppins', sans-serif;
   background: #1a0f0f;
@@ -17,7 +17,7 @@ body {
   min-height: 100vh;
 }
 
-/* Dashboard */
+
 .dashboard {
   display: flex;
   flex-direction: row;
@@ -29,7 +29,7 @@ body {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Sidebar */
+
 .sidebar {
   width: 120px;
   background: #1c0606;
@@ -72,7 +72,7 @@ body {
   box-shadow: 0 4px 10px rgba(255, 71, 71, 0.3);
 }
 
-/* Main content */
+
 .content {
   flex: 1;
   padding: 40px;
@@ -89,7 +89,7 @@ body {
   color: #ff4747;
 }
 
-/* Intro section */
+
 .intro {
   display: flex;
   align-items: center;
@@ -98,7 +98,7 @@ body {
   padding: 30px;
   border-radius: 20px;
 }
-/* New container for buttons */
+
 .button-group {
   display: flex;
   flex-wrap: wrap;
@@ -130,7 +130,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* Projects section */
+
 .projects-preview {
   background: #441010;
   padding: 20px;
@@ -165,7 +165,7 @@ body {
   text-decoration: none;
 }
 
-/* Games section */
+
 .games {
   position: relative;
 }
@@ -179,7 +179,7 @@ body {
 }
 
 .game-list::-webkit-scrollbar {
-  display: none; /* Hide scrollbar */
+  display: none; 
 }
 
 .game-card {
@@ -203,7 +203,7 @@ body {
   background: #ff4747;
 }
 
-/* Modal styles */
+
 .modal {
   display: none;
   position: fixed;
@@ -256,7 +256,7 @@ body {
   object-fit: cover;
 }
 
-/* Tablets and below */
+
 @media screen and (max-width: 1024px) {
   .content {
     padding: 30px;
@@ -277,7 +277,7 @@ body {
   }
 }
 
-/* Tablets / Large Mobile */
+
 @media screen and (max-width: 768px) {
   .dashboard {
     flex-direction: column;
@@ -318,7 +318,7 @@ body {
   }
 }
 
-/* Mobile */
+
 @media screen and (max-width: 480px) {
   .topbar h1 {
     font-size: 22px;
