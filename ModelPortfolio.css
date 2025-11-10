@@ -1,0 +1,337 @@
+/* ==============================
+   Global layout
+============================== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #1a0003;
+  color: #fff;
+  display: flex;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: auto;
+  min-height: 100vh;
+}
+
+/* ==============================
+   Main structure
+============================== */
+.main-layout {
+  display: flex;
+  width: 100%;
+}
+
+/* ==============================
+   Main sidebar (Home, About, Projects, CV)
+============================== */
+.main-sidebar {
+  width: 80px;
+  background-color: #2b0005;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  border-right: 2px solid #40000b;
+
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.main-nav a {
+  color: #f8dcdc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.main-nav a:hover {
+  color: #ff6f61;
+  transform: scale(1.05);
+}
+
+.main-nav a.active {
+  color: #ff6f61;
+  font-weight: bold;
+}
+
+/* ==============================
+   Projects layout
+============================== */
+.projects-container {
+  display: flex;
+  flex: 1;
+  height: auto;
+  min-height: 100vh;
+}
+
+/* ==============================
+   Left project navigation (cleaned)
+============================== */
+.side-nav {
+  width: 18%;
+  background-color: #2b0005;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-right: 2px solid #40000b;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  flex-shrink: 0;
+  z-index: 9;
+}
+
+/* ----- Section Title (Projects) ----- */
+.side-nav-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff6f61;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #40000b;
+  padding-bottom: 0.5rem;
+  width: 80%;
+}
+
+/* ----- Dropdown Category ----- */
+.nav-category {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Category Header (clickable button) */
+.nav-category-header {
+  background: transparent;
+  border: none;
+  color: #ff6f61;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  user-select: none;
+  width: 80%;
+  margin: 0 auto;
+  border-bottom: 1px solid #40000b;
+  transition: color 0.2s, transform 0.15s;
+}
+.nav-category-header:hover {
+  color: #ffb4a2;
+  transform: scale(1.02);
+}
+
+/* Dropdown content: hidden by default, smooth open via max-height */
+.nav-category-content {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  transition: max-height 0.35s ease, margin-top 0.35s ease;
+  margin-top: 0;
+}
+
+/* Show when category is open */
+.nav-category.open .nav-category-content {
+  max-height: 800px; /* enough to reveal all thumbnails */
+  margin-top: 1rem;
+}
+
+/* ----- Individual Items ----- */
+.nav-item {
+  text-align: center;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+/* Reset anchor style (no blue, no underline) */
+.nav-item a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+/* Thumbnails */
+.nav-item img {
+  width: 300px;
+  height: 180px;
+  border-radius: 15px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+/* Labels */
+.nav-item span {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.2rem;
+  color: #ffb4a2;
+}
+
+/* Hover and Active states */
+.nav-item:hover { opacity: 0.8; transform: scale(1.02); }
+
+.nav-item.active {
+  opacity: 1;
+  transform: scale(1.05);
+}
+.nav-item.active img {
+  border-color: #e63946;
+  box-shadow: 0 0 12px #ff6f61;
+}
+
+/* Highlight open category header */
+.nav-category.open .nav-category-header {
+  color: #ffb4a2;
+}
+
+/* ==============================
+   Project content area
+============================== */
+.content {
+  flex-grow: 1;
+  padding: 4rem 6rem;
+  display: block;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: auto;
+  max-width: calc(100% - 100px);
+}
+
+/* ==============================
+   Individual project sections
+============================== */
+section.project-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 5rem;
+}
+
+/* ==============================
+   Banner
+============================== */
+.project-banner img {
+  width: 100%;
+  max-width: 1600px;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* ==============================
+   Headings and text
+============================== */
+h1 {
+  font-size: 3rem;
+  color: #ff6f61;
+  margin: 2rem 0 1rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #ff9f91;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+blockquote {
+  font-style: italic;
+  color: #f5c2c2;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* ==============================
+   Media row (images + video)
+============================== */
+.project-media-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 3rem;
+}
+
+.project-media-row img,
+.project-media-row video,
+.project-media-row iframe {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #ff6f61;
+}
+
+/* ==============================
+   Essay text
+============================== */
+.project-essay {
+  width: 100%;
+  max-width: 1200px;
+  line-height: 1.8;
+  color: #f8dcdc;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.project-essay p {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.project-single-image {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 12px;
+  margin: 2rem 0;
+  border: 2px solid #ff6f61;
+}
+
+/* ==============================
+   Buttons
+============================== */
+button {
+  background-color: #ff6f61;
+  border: none;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #e63946;
+}
